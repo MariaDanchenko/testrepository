@@ -5,15 +5,15 @@ public class FindMinimum {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Напишите первое число: ");
-        int First = scanner.nextInt();
+        int first = scanner.nextInt();
 
         System.out.print("Напишите второе число: ");
-        int Second = scanner.nextInt();
+        int second = scanner.nextInt();
 
         System.out.print("Напишите третье число: ");
-        int Third = scanner.nextInt();
+        int third = scanner.nextInt();
 
-        int Minimum = Math.min(First, Math.min(Second, Third));
+        int Minimum = Math.min(first, Math.min(second, third));
 
         System.out.println("Минимальное число: " + Minimum);
     }

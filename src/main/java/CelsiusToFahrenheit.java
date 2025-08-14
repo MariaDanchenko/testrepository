@@ -5,11 +5,11 @@ public class CelsiusToFahrenheit {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Напишите температуру в градусах Цельсия: ");
-                int Celsius = scanner.nextInt();
+                int celsius = scanner.nextInt();
 
-        int Fahrenheit = Celsius * 9 / 5 + 32;
+        int fahrenheit = celsius * 9 / 5 + 32;
 
-        System.out.println(Celsius + "°C = " + Fahrenheit + "℉ ");
+        System.out.println(celsius + "°C = " + fahrenheit + "℉ ");
     }
 
 }
