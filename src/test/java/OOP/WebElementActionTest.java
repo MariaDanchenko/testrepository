@@ -23,6 +23,7 @@ public class WebElementActionTest {
 
     @AfterClass(alwaysRun = true)
     void closeDriver() {
+
         driver.quit();
     }
 
