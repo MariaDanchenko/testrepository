@@ -1,6 +1,6 @@
-package OOP;
+package oop;
 
-public class User {
+public class User2 {
     private String username;
     private String password;
 
@@ -16,7 +16,12 @@ public class User {
         this.username = username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public boolean setPassword(String password) {
+        if (password.length() < 8) {
+            return false;
+        } else {
+            this.password = password;
+            return true;
+        }
     }
 }

@@ -1,4 +1,4 @@
-package OOP;
+package oop;
 
 import org.openqa.selenium.WebDriver;
 

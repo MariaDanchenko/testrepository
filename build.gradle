@@ -17,10 +17,4 @@ dependencies {
 
 test {
     useTestNG()
-
-    // путь к тестовым классам
-    testClassesDirs = files('test/java')
-
-    // путь к тестовым ресурсам (если есть)
-    classpath += files('test/resources')
 }

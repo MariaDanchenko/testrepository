@@ -1,27 +1,26 @@
-package OOP;
+package oop;
 
-public class User2 {
+public class User {
     private String username;
     private String password;
 
     public String getUsername() {
+
         return username;
     }
 
     public String getPassword() {
+
         return password;
     }
 
     public void setUsername(String username) {
+
         this.username = username;
     }
 
-    public boolean setPassword(String password) {
-        if (password.length() < 8) {
-            return false;
-        } else {
-            this.password = password;
-            return true;
-        }
+    public void setPassword(String password) {
+
+        this.password = password;
     }
 }
