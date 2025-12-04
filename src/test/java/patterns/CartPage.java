@@ -12,7 +12,7 @@ public class CartPage {
 
     private final By countOfCart = By.cssSelector(".shopping_cart_badge");
     private final By shoppingCartLink = By.cssSelector("[data-test = 'shopping-cart-link']");
-    private final By removeButton = By.cssSelector("button[data-test^ = 'remove-']");
+    private final By removeButton = By.cssSelector("button[data-test^='remove-']");
     private final By checkoutButton = By.cssSelector("button[data-test = 'checkout']");
     private final By cartList = By.cssSelector(".cart_item");
     private final By itemName = By.cssSelector(".inventory_item_name");
