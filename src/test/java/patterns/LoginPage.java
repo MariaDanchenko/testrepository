@@ -2,10 +2,16 @@ package patterns;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginPage {
 
     private WebDriver driver;
+    private WebDriverWait wait;
 
     private final By usernameField = By.cssSelector("#user-name");
     private final By passwordField = By.cssSelector("#password");
@@ -14,10 +20,14 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
     }
 
     public void enterUsername(String username) {
-        driver.findElement(usernameField).sendKeys(username);
+        WebElement usernameInput = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
+        usernameInput.clear(); // очищаем поле перед вводом
+        usernameInput.sendKeys(username);
     }
 
     public void enterPassword(String password) {
