@@ -20,6 +20,7 @@ public class BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void closeDriver() {
+
         driver.quit();
     }
 

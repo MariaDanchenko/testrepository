@@ -32,7 +32,7 @@ public class ImplicitWaitTest {
     }
 
     @Test
-    public void implicitTest() {
+    public void testImplisitWait() {
 
         driver.findElement(By.cssSelector("#user-name")).sendKeys("standard_user");
         driver.findElement(By.cssSelector("#password")).sendKeys("secret_sauce");
