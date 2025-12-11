@@ -1,7 +1,0 @@
-package oop;
-
-import org.openqa.selenium.WebDriver;
-
-public interface WebElementAction {
-    void performAction(WebDriver driver);
-}
