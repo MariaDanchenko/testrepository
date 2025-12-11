@@ -25,6 +25,6 @@ public class ProductsVisibleTest extends BaseTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(inventoryList));
 
         List<WebElement> productElements = driver.findElements(products);
-        Assert.assertTrue(productElements.size() > 0);
+        Assert.assertFalse(productElements.isEmpty());
     }
 }
