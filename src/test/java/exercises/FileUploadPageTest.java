@@ -8,6 +8,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 public class FileUploadPageTest {
 
     private WebDriver driver;
@@ -29,9 +33,15 @@ public class FileUploadPageTest {
     }
 
     @Test
-    public void testFileUpload() {
-        fileUploadPage
-                .selectFile("D:\\masha\\Курс автоматизации\\1\\DemoTestRepository\\src\\target\\тест.jpg");
+    public void testFileUpload() throws URISyntaxException {
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL resource = classLoader.getResource("test.jpg");
+
+        File testFile = new File(resource.toURI());
+        String absolutePath = testFile.getAbsolutePath();
+
+        fileUploadPage.selectFile(absolutePath);
         fileUploadPage.clickUpload();
 
         Assert.assertEquals(fileUploadPage.getMessage(), "File Uploaded!");
