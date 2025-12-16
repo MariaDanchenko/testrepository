@@ -31,7 +31,7 @@ public class DropdownHandler {
     public void testDropdown() {
         WebDriverManager.chromedriver().clearDriverCache().setup();
         WebDriver driver = new ChromeDriver();
-        driver.get("https://www.saucedemo.com/");
+        driver.get("https://www.saucedemo.com/inventory.html");
 
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
