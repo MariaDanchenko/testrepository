@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class InventoryPage {
 
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
@@ -14,7 +16,7 @@ public class InventoryPage {
     private WebElement cartLink;
 
     @FindBy(className = "shopping_cart_badge")
-    private WebElement cartBadge;
+    private List<WebElement> cartBadge;
 
     public InventoryPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -29,6 +31,10 @@ public class InventoryPage {
     }
 
     public String getCartBadgeValue() {
-        return cartBadge.getText();
+        return cartBadge.get(0).getText();
+    }
+
+    public boolean isCartBadgeDisplayed() {
+        return !cartBadge.isEmpty();
     }
 }
