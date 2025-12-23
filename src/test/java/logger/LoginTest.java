@@ -29,6 +29,7 @@ public class LoginTest {
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+            logger.info("Browser closed");
         }
     }
 
