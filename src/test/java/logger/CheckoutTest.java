@@ -62,13 +62,14 @@ public class CheckoutTest {
     @Test
     public void checkoutTest() {
         try {
-        checkoutProcess();
+            checkoutProcess();
 
-        String title = driver.findElement(By.className("title")).getText();
+            String title = driver.findElement(By.className("title")).getText();
 
-        Assert.assertEquals(title, "Checkout: Complete!");
-        logger.info("Checkout completed successfully");
-    } catch (Exception e) {
-            logger.info("Checkout test failed" ,e);
+            Assert.assertEquals(title, "Checkout: Complete!");
+            logger.info("Checkout completed successfully");
+        } catch (Exception e) {
+            logger.info("Checkout test failed", e);
         }
+    }
 }
