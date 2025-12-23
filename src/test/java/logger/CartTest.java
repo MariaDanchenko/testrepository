@@ -32,7 +32,6 @@ public class CartTest {
     }
 
     public void  addItemToCart() {
-        try {
             driver.get("https://www.saucedemo.com/");
 
             driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -44,9 +43,6 @@ public class CartTest {
 
             driver.findElement(By.className("shopping_cart_link")).click();
             logger.info("Navigated to cart page");
-        } catch (Exception e) {
-            logger.error("Error while adding item to cart", e);
-        }
     }
 
     @Test
