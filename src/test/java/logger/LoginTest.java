@@ -35,7 +35,6 @@ public class LoginTest {
 
     public void loginToSauceDemo(String username, String password) {
 
-        try {
             driver.get("https://www.saucedemo.com/");
             logger.info("Navigated to authorization page");
 
@@ -45,9 +44,6 @@ public class LoginTest {
 
             driver.findElement(By.id("login-button")).click();
             logger.info("Clicking the Login button");
-        } catch (Exception e) {
-            logger.error("Error during authorization", e);
-        }
     }
 
     @Test
