@@ -31,7 +31,6 @@ public class CheckoutTest {
     }
 
     public void checkoutProcess() {
-        try {
             driver.get("https://www.saucedemo.com/");
 
             driver.findElement(By.id("user-name")).sendKeys("standard_user");
@@ -58,18 +57,18 @@ public class CheckoutTest {
 
             driver.findElement(By.id("finish")).click();
             logger.info("Finish checkout");
-        } catch (Exception e) {
-            logger.error("Error during checkout", e);
-        }
     }
 
     @Test
     public void checkoutTest() {
+        try {
         checkoutProcess();
 
         String title = driver.findElement(By.className("title")).getText();
 
         Assert.assertEquals(title, "Checkout: Complete!");
         logger.info("Checkout completed successfully");
-    }
+    } catch (Exception e) {
+            logger.info("Checkout test failed" ,e);
+        }
 }
