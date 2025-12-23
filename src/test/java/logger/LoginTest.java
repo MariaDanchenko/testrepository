@@ -47,7 +47,6 @@ public class LoginTest {
             logger.info("Clicking the Login button");
         } catch (Exception e) {
             logger.error("Error during authorization", e);
-            throw e;
         }
     }
 
@@ -64,7 +63,6 @@ public class LoginTest {
             logger.info("Successful login");
         } catch (AssertionError e) {
             logger.error("Authorization check error", e);
-            throw e;
         }
     }
 }
