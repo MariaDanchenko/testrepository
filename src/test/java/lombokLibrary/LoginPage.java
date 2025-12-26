@@ -20,6 +20,7 @@ public class LoginPage {
     private final By loginButton = By.id("login-button");
 
     public void open() {
+
         driver.get("https://www.saucedemo.com/");
     }
 
