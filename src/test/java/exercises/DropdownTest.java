@@ -1,6 +1,5 @@
-package pageFactory;
+package exercises;
 
-import exercises.DropdownPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,7 +18,7 @@ public class DropdownTest {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverManager.chromedriver().clearDriverCache().setup();
+        WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/dropdown");
