@@ -18,6 +18,7 @@ public class CartPage {
     private WebElement checkoutButton;
 
     public CartPage(WebDriver driver) {
+
         PageFactory.initElements(driver, this);
     }
 
@@ -28,6 +29,7 @@ public class CartPage {
     }
 
     public void proceedToCheckout() {
+
         checkoutButton.click();
     }
 }
