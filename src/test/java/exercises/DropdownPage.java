@@ -11,10 +11,10 @@ public class DropdownPage {
     @FindBy(id = "dropdown")
     private WebElement dropdown;
 
-    @FindBy(css = "option[value = '1']")
+    @FindBy(css = "option[value='1']")
     private WebElement optionOne;
 
-    @FindBy(css = "option[value = '2']")
+    @FindBy(css = "option[value='2']")
     private WebElement optionTwo;
 
     public DropdownPage(WebDriver driver) {
