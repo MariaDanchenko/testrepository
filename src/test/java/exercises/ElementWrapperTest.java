@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 
 import java.time.Duration;
 
+@Listeners(ElementWrapperListener.class)
 public class ElementWrapperTest {
 
     private WebDriver driver;
