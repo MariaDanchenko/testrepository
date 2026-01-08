@@ -1,4 +1,4 @@
-package exercises;
+package exercises.threeAndFour;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,10 +23,12 @@ public class DropdownPage {
     }
 
     public void selectOptionOne() {
+
         optionOne.click();
     }
 
     public void selectOptionTwo() {
+
         optionTwo.click();
     }
 
