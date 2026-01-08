@@ -1,4 +1,4 @@
-package exercises.Checkbox;
+package exercises.checkbox;
 
 import lombok.*;
 
