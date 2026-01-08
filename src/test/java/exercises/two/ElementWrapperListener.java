@@ -1,4 +1,4 @@
-package exercises;
+package exercises.two;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

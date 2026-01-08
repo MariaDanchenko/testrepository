@@ -1,4 +1,4 @@
-package exercises;
+package exercises.two;
 
 public class ElementWrapper<T> {
 

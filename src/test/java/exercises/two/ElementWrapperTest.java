@@ -1,4 +1,4 @@
-package exercises;
+package exercises.two;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
