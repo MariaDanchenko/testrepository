@@ -1,4 +1,4 @@
-package exercises.checkbox;
+package exercises.six;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
