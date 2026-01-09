@@ -38,10 +38,8 @@ public class DynamicLoadingPageTest {
     @Test
     public void testDynamicLoadingPage() {
         dynamicLoadingPage.clickLink();
-        logger.info("Click link");
 
         dynamicLoadingPage.clickStartButton();
-        logger.info("Click Start button");
 
         Assert.assertEquals(dynamicLoadingPage.getLoadingMessage(), "Hello World!");
         logger.info("Successful loading");
