@@ -11,27 +11,34 @@ public class CustomTestListener implements ITestListener {
     private static final Logger logger = LogManager.getLogger(CustomTestListener.class);
 
     @Override
-    public void onTestStart(ITestResult result) {
-        System.out.println("Test started: " + result.getName());
-    }
-
-    @Override
-    public void onTestSuccess(ITestResult result) {
-        System.out.println("Test passed: " + result.getName());
-    }
-
-    @Override
-    public void onTestFailure(ITestResult result) {
-        System.out.println("Test failed: " + result.getName());
-    }
-
-    @Override
-    public void onTestSkipped(ITestResult result) {
-        System.out.println("Test skipped: " + result.getName());
+    public void onStart(ITestContext context) {
+        logger.info("Test suite started: {}", context.getName());
     }
 
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("Testing finished: " + context.getName());
+        logger.info("Test suite finished: {}", context.getName());
+    }
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        logger.info("Test started: {}", result.getName());
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        long duration = result.getEndMillis() - result.getStartMillis();
+        logger.info("Test passed: {}. Execution time: {} ms", result.getName(), duration);
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        long duration = result.getEndMillis() - result.getStartMillis();
+        logger.info("Test failed: {}. Execution time: {} ms", result.getName(), duration);
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        logger.info("Test skipped: {}", result.getName());
     }
 }
