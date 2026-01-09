@@ -41,6 +41,7 @@ public class CheckboxesTest {
 
         List<WebElement> list = checkboxesPage.getCheckboxes();
 
+        //оборачиваем каждый чекбокс
         for (int i = 0; i < list.size(); i++) {
 
             WebElement checkbox;
@@ -57,6 +58,7 @@ public class CheckboxesTest {
             ElementWrapper<WebElement> wrapper;
             wrapper = wrappers.get(i);
 
+            // если чекбокс не выбран - кликаем по нему
             boolean isChecked;
             isChecked = wrapper.isChecked();
 
@@ -64,6 +66,7 @@ public class CheckboxesTest {
                 wrapper.toggle();
             }
 
+            // проверяем, что чексбокс был выбран
             boolean finalState;
             finalState = wrapper.isChecked();
 
