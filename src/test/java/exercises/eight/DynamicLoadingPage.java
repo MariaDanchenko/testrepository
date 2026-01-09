@@ -1,5 +1,7 @@
 package exercises.eight;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,6 +14,7 @@ import java.time.Duration;
 public class DynamicLoadingPage {
 
     private WebDriver driver;
+    private final Logger logger = LogManager.getLogger()
 
     @FindBy(css = "a[href = '/dynamic_loading/1']")
     private WebElement link;
