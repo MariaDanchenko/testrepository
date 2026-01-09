@@ -14,7 +14,7 @@ import java.time.Duration;
 public class DynamicLoadingPage {
 
     private WebDriver driver;
-    private final Logger logger = LogManager.getLogger()
+    private final Logger logger = LogManager.getLogger(DynamicLoadingPage.class);
 
     @FindBy(css = "a[href = '/dynamic_loading/1']")
     private WebElement link;
@@ -29,16 +29,19 @@ public class DynamicLoadingPage {
 
         PageFactory.initElements(driver, this);
         this.driver = driver;
+        logger.info("DynamicLoadingPage initialized");
     }
 
     public void clickLink() {
         link.click();
+        logger.info("Clicked on the link");
     }
 
     public void clickStartButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(startButton));
         startButton.click();
+        logger.info("Clicked on the Start button");
     }
 
     public String getLoadingMessage() {
@@ -46,6 +49,9 @@ public class DynamicLoadingPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(loadingMessage));
 
-        return loadingMessage.getText();
+        String message = loadingMessage.getText();
+
+        logger.info("Loading message: {}", message);
+        return message;
     }
 }
