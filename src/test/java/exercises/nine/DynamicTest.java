@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class DynamicTest {
 
     private WebDriver driver;
-    private exercises.eight.DynamicLoadingPage dynamicLoadingPage;
+    private exercises.nine.DynamicLoadingPage dynamicLoadingPage;
     private static final Logger logger = LogManager.getLogger(DynamicTest.class);
 
     @BeforeMethod
@@ -27,7 +27,7 @@ public class DynamicTest {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading");
         logger.info("Browser started");
 
-        dynamicLoadingPage = new DynamicLoadingPage(driver);
+        dynamicLoadingPage = new exercises.nine.DynamicLoadingPage(driver);
     }
 
     @AfterMethod
