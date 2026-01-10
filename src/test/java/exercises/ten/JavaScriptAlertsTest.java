@@ -1,6 +1,8 @@
 package exercises.ten;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -12,6 +14,7 @@ public class JavaScriptAlertsTest {
 
     private WebDriver driver;
     private JavaScriptAlertsPage javaScriptAlertsPage;
+    private static final Logger logger = LogManager.getLogger(JavaScriptAlertsTest.class);
 
     @BeforeMethod
     public void setUp() {
@@ -19,6 +22,7 @@ public class JavaScriptAlertsTest {
 
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        logger.info("Browser started");
 
         javaScriptAlertsPage = new JavaScriptAlertsPage(driver);
     }
@@ -27,6 +31,7 @@ public class JavaScriptAlertsTest {
     public void tearDown() {
         if (driver != null) {
             driver.quit();
+            logger.info("Browser closed");
         }
     }
 
@@ -37,6 +42,7 @@ public class JavaScriptAlertsTest {
         Assert.assertEquals(alertText, "I am a JS Alert");
         javaScriptAlertsPage.acceptAlert();
         Assert.assertEquals(javaScriptAlertsPage.getResultText(), "You successfully clicked an alert");
+        logger.info("JS Alert test completed successfully");
     }
 
     @Test
@@ -46,6 +52,7 @@ public class JavaScriptAlertsTest {
         Assert.assertEquals(alertText, "I am a JS Confirm");
         javaScriptAlertsPage.acceptAlert();
         Assert.assertEquals(javaScriptAlertsPage.getResultText(), "You clicked: Ok");
+        logger.info("JS Confirm (accept) test completed successfully");
     }
 
     @Test
@@ -53,6 +60,7 @@ public class JavaScriptAlertsTest {
         javaScriptAlertsPage.clickJSConfirm();
         javaScriptAlertsPage.dismissAlert();
         Assert.assertEquals(javaScriptAlertsPage.getResultText(), "You clicked: Cancel");
+        logger.info("JS Confirm (dismiss) test completed successfully");
     }
 
     @Test
@@ -62,6 +70,7 @@ public class JavaScriptAlertsTest {
         Assert.assertEquals(alertText, "I am a JS prompt");
         javaScriptAlertsPage.sendKeysToPrompt("masha");
         Assert.assertEquals(javaScriptAlertsPage.getResultText(), "You entered: masha");
+        logger.info("JS Prompt (send keys) test completed successfully");
     }
 
     @Test
@@ -69,5 +78,6 @@ public class JavaScriptAlertsTest {
         javaScriptAlertsPage.clickJSPrompt();
         javaScriptAlertsPage.dismissAlert();
         Assert.assertEquals(javaScriptAlertsPage.getResultText(), "You entered: null");
+        logger.info("JS Prompt (dismiss) test completed successfully");
     }
 }
