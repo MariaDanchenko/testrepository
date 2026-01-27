@@ -19,6 +19,16 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.34'
     testCompileOnly 'org.projectlombok:lombok:1.18.34'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+    testImplementation 'io.qameta.allure:allure-testng:2.27.0'
+    implementation 'io.qameta.allure:allure-attachments:2.13.8'
+}
+
+tasks.register('allureReport', Exec) {
+    commandLine 'allure', 'generate', 'allure-results', '--clean'
+}
+
+tasks.register('allureServe', Exec) {
+    commandLine 'allure', 'serve', 'allure-results'
 }
 
 test {
