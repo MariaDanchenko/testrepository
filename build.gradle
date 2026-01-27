@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.12.0'
 }
 
 group = 'org.example'
@@ -20,17 +21,10 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok:1.18.34'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
     testImplementation 'io.qameta.allure:allure-testng:2.27.0'
-    implementation 'io.qameta.allure:allure-attachments:2.13.8'
-}
-
-tasks.register('allureReport', Exec) {
-    commandLine 'allure', 'generate', 'allure-results', '--clean'
-}
-
-tasks.register('allureServe', Exec) {
-    commandLine 'allure', 'serve', 'allure-results'
+    implementation 'io.qameta.allure:allure-attachments:2.27.0'
 }
 
 test {
     useTestNG()
+    systemProperty 'allure.results.directory', file("build/allure-results")
 }
